@@ -11,9 +11,9 @@ Resources:
  Ec2Instance:
   Type: 'AWS::EC2::Instance'
   Properties: 
-   KeyName: Nvirginiakey
+   KeyName: Nvirginia2
    InstanceType: t2.micro
-   ImageId: 'ami-026b57f3c383c2eec'
+   ImageId: 'ami-0b5eea76982371e91'
    SecurityGroups: 
     - !Ref InstanceSecurityGroup
    
