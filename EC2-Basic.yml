@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creation Of Ec2-instance 
+
+Parameters:
+  EnvironmentName: 
+   Description: SDLC Environment e.g Qa/Prod/Dev
+   Type: String
+   Default: Dev
+
+Resources: 
+ Ec2Instance:
+  Type: 'AWS::EC2::Instance'
+  Properties: 
+   KeyName: Nvirginiakey
+   InstanceType: t2.micro
+   ImageId: 'ami-026b57f3c383c2eec'
+   SecurityGroups: 
+    - !Ref InstanceSecurityGroup
+   
+ InstanceSecurityGroup:
+     Type: 'AWS::EC2::SecurityGroup'
+     Properties:
+       GroupDescription: InstanceSecurityGroup
+       GroupName: !Join ["-", [ !Ref EnvironmentName , 'SecurityGroupName']]
+       SecurityGroupIngress:
+         IpProtocol: tcp
+         FromPort: '22'
+         ToPort: '22'
+         CidrIp: 0.0.0.0/0
+
+       
+       
