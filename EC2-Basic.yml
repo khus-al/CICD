@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: 2010-09-09
+AWSTEMPLATEFORMATVERSION: 2010-09-09
 Description: Creation Of Ec2-instance 
 
 Parameters:
